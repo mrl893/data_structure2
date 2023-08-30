@@ -90,3 +90,32 @@ print((P[0:4]), "")
 # print(("Wednesday"), P[-6])
 print(P[4])
 
+# Tuple
+# Tupple = (8,'a',True,[1,2,3],"hello")   #(immutable)
+
+empty_tuple = tuple()
+type(empty_tuple)
+
+primes = (2,3,5,7,11,13)
+print(type(primes))
+
+
+planets = ("mercury","venus","earth","mars","jupiter"
+           "saturn","uranus","neptune")
+# print(len(planets), planets[:3] , planets[:-1])
+print(type(planets))
+print(f"Number of planets in our solar system is: {len(planets)}")
+
+# count
+print(planets.count('earth'))
+
+# index
+print(planets.index("mars"))
+
+
+solar_system_list = ["mercury", "venes", "earth", "mars",
+                     "jupiter", "saturn", "uranus", "neptune"]
+
+a_mutable_tuple = (solar_system_list, "pluto")
+# print(a_mutable_tuple)
+
