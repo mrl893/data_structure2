@@ -71,3 +71,22 @@ morefruits = ["guava", "peach"]
 fruits.extend(morefruits)
 print(fruits)
 
+# insert(index, item)
+fruits.insert(2, "pineapple")
+print(fruits)
+
+# pop()
+fruits.pop()
+print(fruits)
+
+# clear()
+fruits.clear()
+print(fruits)
+
+# Mixed types
+# mixed_list = [10,"Hello","World",[34]] # mixed type list
+P = ["Wednesday", "April", 5, 2017, ("A","B","C")]
+print((P[0:4]), "")
+# print(("Wednesday"), P[-6])
+print(P[4])
+
