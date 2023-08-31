@@ -119,3 +119,173 @@ solar_system_list = ["mercury", "venes", "earth", "mars",
 a_mutable_tuple = (solar_system_list, "pluto")
 # print(a_mutable_tuple)
 
+
+print(f"Original tuple: {a_mutable_tuple}")
+print(f"ID id tuple: {id(a_mutable_tuple)}")
+
+a_mutable_tuple[0][2] = "EARTH"
+
+print(f"Modified tuple: {a_mutable_tuple}")
+print(f'ID of tuple: {id(a_mutable_tuple)}')
+
+
+(x,y,z) = ["a","b","c"]
+x,y,z
+(x,*y)=["a","b","c","d","e","f"] # * unpacking
+
+data = (1,2,3,4,5,6,7,8,9)
+data
+
+# Dictionary
+# dict = {"key":"value"}  {} or dictionary
+# key must be immutable and value can be mutable as well
+
+empty_dict = dict()
+type(empty_dict)
+
+daily_temps = dict()
+daily_temps["mon"] = 70.2
+daily_temps["tue"] = 67.2
+daily_temps["web"] = 71.8
+daily_temps["thu"] = 73.2
+daily_temps["fri"] = 75.6
+
+daily_temps1 = {"mon":70.2, "tue":67.2, "wed":71.8, "thu":73.2, "fri":75.6}
+# print(daily_temps == daily_temps1 )
+
+daily_temps2 = dict([("mon",70.2),("tue",67.2),
+                     ("wed",71.8),("thu",73.2),
+                     ("fri",75.6)])
+
+daily_temps3 = dict(mon=70.2, tue=67.2, wed=71.8, thu=73.2, fri=75.6)
+days  = ["mon", "tue", "wed", "thu", "fri"]
+temps = [70.2, 67.2, 71.8, 73.2, 75.6]
+daily_temps4 = dict(zip(days, temps))
+print("\nDaily temperatures in Celsius:")
+
+
+# access elements
+print(daily_temps["web"])
+daily_temps.keys()
+daily_temps.values()
+daily_temps.items()
+
+"fri" in daily_temps
+len(daily_temps)
+
+# key must be Inmutable
+temps   = {("June",10,2019): 75.2, "June-11-2019": 77.2, 3:88.9}
+print(temps[3])
+
+# loop over keys
+for day in daily_temps:
+    print(day)
+
+for day in daily_temps:
+    print(f"Key: {day} and Value: {daily_temps[day]}")
+
+
+# Loop over keys and values
+for day , temp in daily_temps.items():
+    print(day, temp)
+
+
+colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"] 
+d = dict()
+
+for color in colors:
+    key = len(color)
+    if key not in d:
+        d[key] = []
+    d[key].append(color)
+print(f"d: {d}")
+print(daily_temps2)
+
+# Edit a Dictionary(add, delete items)
+daily_temps2.update({"sat":32.3, "sun":76.8})
+print(daily_temps2)
+
+
+del daily_temps2["wed"]
+print(daily_temps2)
+
+removed_value = daily_temps2.pop("fri")
+print("Romoved value: {}.format(removed_value)")
+print("Updated dictionary: {}".format(daily_temps2))
+
+# Useful Funct ass with Dictionaries
+
+# Set
+
+empty_set = set()
+type(empty_set)
+
+fibo = {1,1,2,3,5}
+print(type(fibo))
+print("Set fibo: ", fibo)
+
+# fibo[0]
+
+some_primes = [1,1,2,2,3,3,5,5]
+primes = set(some_primes)
+print("set primes:" , primes)
+
+
+# Mathematical set operations
+a = set({1,2,3,4})
+b = set([3,4,5,6])
+
+# a.union(b)
+a|b
+a&b
+a.issubset(b)
+a.difference(b)
+a-b
+
+a  = [[90,85,82], [72, 88, 90]]
+print(id(a))
+
+b = a
+print(id(b))
+
+
+b.append(23)
+print("\na: ", a)
+print("\nb:", b)
+
+print("EQL?:", (a == b))
+print("SOME ?:", (a is b))
+
+b[0][0] = 30
+print("b: ", b)
+b = list(a)
+print("a: ", a)
+
+
+import copy
+
+print(id(a))
+print(a)
+b = copy.copy(a)
+print(id(b))
+
+# Chage first year and firts subject's marks to 30
+b[0][0] = 30
+
+print("\nOringal List: ", a)
+print("Shallow Copy: ", b)
+
+print("\nEQl?:", (a == b))
+print("\nSAME ?:", (a is b))
+
+# Change first year and first subject's marks to 30
+b = copy.deepcopy(a)
+b[0][0] = 30
+
+print("\nOriginal List: ", a)
+print("Deep Copy: ", b)
+
+print("EQL?:", (a == b))
+print("SAME ?:", (a is b))
+
+
